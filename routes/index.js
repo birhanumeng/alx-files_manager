@@ -13,6 +13,6 @@ const router = (app) => {
   paths.get('/stats', ((request, response) => {
     AppController.getStats(request, response)
   }));
-}
+};
 
 export default router;
