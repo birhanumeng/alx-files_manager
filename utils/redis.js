@@ -23,9 +23,9 @@ class RedisClient {
   }
 
   // insert key value with expiration in second
-  async set(key, value, duration) {
+  async set(key, value, delay) {
     this.client.set(key, value);
-    this.client.expire(key, duration);
+    this.client.expire(key, delay);
   }
 
   // delete elemet using key
