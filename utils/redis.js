@@ -11,29 +11,28 @@ class RedisClient {
     });
   }
 
-  //chech if redis is connected
+  // chech if redis is connected
   isAlive() {
     return this.client.connected;
   }
 
-  //get value using key
+  // get value using key
   async get(key) {
     const value = await this.getAsync(key);
     return value;
   }
 
-  //insert key value with expiration in second
+  // insert key value with expiration in second
   async set(key, value, duration) {
     this.client.set(key, value);
     this.client.expire(key, duration);
   }
 
-  //delete elemet using key
+  // delete elemet using key
   async del(key) {
     this.client.del(key);
   }
 }
 
-const redisClient = new RedisClient();
-
+const redisClient = new RedisClient();i
 module.exports = redisClient;
