@@ -14,3 +14,5 @@ const router = (app) => {
     AppController.getStats(request, response)
   }));
 }
+
+export default router;
