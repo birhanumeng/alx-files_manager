@@ -1,13 +1,13 @@
 import AppController from '../controllers/AppController';
 
 const express = require('express');
-// all endpoints of our API
+
 const router = (app) => {
   const paths = express.Router();
   app.use(express.json());
   app.use('/', paths);
 
-  paths.get('/status', ((request, response) => AppController.getStatus(request, response)));
+  paths.get('/status', ((request, response) => {AppController.getStatus(request, response)}));
   paths.get('/stats', ((request, response) => AppController.getStats(request, response)));
 };
 
