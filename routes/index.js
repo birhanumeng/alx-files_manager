@@ -7,9 +7,7 @@ const router = (app) => {
   app.use(express.json());
   app.use('/', paths);
 
-  paths.get('/status', ((request, response) => {
-    return AppController.getStatus(request, response)
-  }));
+  paths.get('/status', ((request, response) => AppController.getStatus(request, response)));
   paths.get('/stats', ((request, response) => AppController.getStats(request, response)));
 };
 
