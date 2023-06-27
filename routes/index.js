@@ -1,6 +1,7 @@
 import AppController from '../controllers/AppController';
 import UsersController from '../controllers/UsersController';
 import AuthController from '../controllers/AuthController';
+import FilesController from '../controllers/FilesController';
 
 const express = require('express');
 
@@ -15,6 +16,7 @@ const router = (app) => {
   paths.get('/connect', ((request, response) => AuthController.getConnect(request, response)));
   paths.get('/disconnect', ((request, response) => AuthController.getDisconnect(request, response)));
   paths.get('/users/me', ((request, response) => UsersController.getMe(request, response)));
+  paths.post('/files', ((request, response) => FilesController.postUpload(request, response)));
 };
 
 module.exports = router;
